@@ -26,7 +26,7 @@ class Manager:
         self.model = cls
 
     def all(self) -> Iterator[HasDatafile]:
-        root = Path(inspect.getfile(self.model)).parent
+        root = Path.cwd()
         pattern = str(root / self.model.Meta.datafile_pattern)
         splatted = pattern.format(self=Splats())
         log.info(f'Finding files matching pattern: {splatted}')
