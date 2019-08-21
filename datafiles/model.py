@@ -46,6 +46,7 @@ def create_model(
     attrs=None,
     manual=None,
     pattern=None,
+    directory=None,
     defaults=None,
     auto_load=None,
     auto_save=None,
@@ -66,6 +67,8 @@ def create_model(
     if pattern is not None:
         m.datafile_pattern = pattern
 
+    if not hasattr(cls, 'Meta') and directory is not None:
+        m.datafile_directory = directory
     if not hasattr(cls, 'Meta') and manual is not None:
         m.datafile_manual = manual
     if not hasattr(cls, 'Meta') and defaults is not None:

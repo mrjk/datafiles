@@ -15,6 +15,7 @@ if TYPE_CHECKING:
 class Meta:
     datafile_attrs: Optional[Dict[str, Converter]] = None
     datafile_pattern: Optional[str] = None
+    datafile_directory: Optional[str] = None
 
     datafile_manual: bool = False
     datafile_defaults: bool = False
@@ -30,6 +31,8 @@ def load(obj) -> Meta:
         meta.datafile_attrs = obj.Meta.datafile_attrs
     with suppress(AttributeError):
         meta.datafile_pattern = obj.Meta.datafile_pattern
+    with suppress(AttributeError):
+        meta.datafile_directory = obj.Meta.datafile_directory
     with suppress(AttributeError):
         meta.datafile_manual = obj.Meta.datafile_manual
     with suppress(AttributeError):

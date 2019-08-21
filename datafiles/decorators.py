@@ -15,6 +15,7 @@ if TYPE_CHECKING:
 def datafile(
     pattern: str,
     attrs: Optional[Dict[str, Converter]] = None,
+    directory: str = Meta.datafile_directory,
     manual: bool = Meta.datafile_manual,
     defaults: bool = Meta.datafile_defaults,
     auto_load: bool = Meta.datafile_auto_load,
@@ -34,6 +35,7 @@ def datafile(
             attrs=attrs,
             pattern=pattern,
             manual=manual,
+            directory=directory,
             defaults=defaults,
             auto_load=auto_load,
             auto_save=auto_save,

@@ -27,6 +27,7 @@ class Mapper:
         *,
         attrs: Dict,
         pattern: Optional[str],
+        directory: Optional[str],
         manual: bool,
         defaults: bool,
         auto_load: bool,
@@ -40,6 +41,7 @@ class Mapper:
         self.attrs = attrs
         self._pattern = pattern
         self._manual = manual
+        self._directory = directory
         self.defaults = defaults
         self._auto_load = auto_load
         self._auto_save = auto_save
