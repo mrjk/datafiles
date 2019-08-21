@@ -27,7 +27,7 @@ class Manager:
 
     def all(self) -> Iterator[HasDatafile]:
         root = self.model.Meta.datafile_directory
-        if root:
+        if not root:
             root = Path(inspect.getfile(self.model)).parent
         else:
             root = Path(root)
